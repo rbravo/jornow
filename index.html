@@ -166,7 +166,10 @@
 			}
 			function getMp3Url(text)
 			{
-			 return 'http://api.voicerss.org/?key=f35b80edd9ba4191b7bb28cea525a7cd&hl=pt-br&src='+text;
+				text = encodeURIComponent(text);
+				var ret= 'http://api.voicerss.org/?key=f35b80edd9ba4191b7bb28cea525a7cd&hl=pt-br&src='+text;
+				console.log(ret);
+				return ret;
 			}
 
 
