@@ -118,7 +118,11 @@
 		 			});
 		 			$('.slides').find('img').each(function(){ 
 	 					var src = $(this).attr('src');
-	 					$(this).attr('src','http://' + src.split('90x68/')[1]);
+	 					if (src.indexOf('s.glbimg.com')>-1)
+	 					{
+	 						src = 'http://s.glbimg.com' +  src.split('s.glbimg.com')[1];
+	 						$(this).attr('src',src);
+	 					}
 		 			});
 	 				initReveal();
 			 	};
