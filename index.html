@@ -19,7 +19,11 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+<<<<<<< HEAD
 
+=======
+		<link rel="stylesheet" type="text/css" href="http://jplayer.org/latest/skin/pink.flag/jplayer.pink.flag.css">
+>>>>>>> origin/gh-pages
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -28,6 +32,13 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+<<<<<<< HEAD
+=======
+
+		<style>
+			.reveal section img{max-height: 45%;}
+		</style>
+>>>>>>> origin/gh-pages
 	</head>
 
 	<body>
@@ -37,6 +48,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+<<<<<<< HEAD
 					<h1>Reveal.js</h1>
 					<h3>HTML Presentations Made Easy</h3>
 					<p>
@@ -44,6 +56,15 @@
 					</p>
 				</section>
 
+=======
+					<h1>JorNow.com</h1>
+					<h3>Dynamic News Reading. Press <a href="#" class="navigate-right">right</a> to start!</h3>
+					<p>
+						<small>Created by <a href="http://github.com/rbravo">rbravo</a></small>
+					</p>
+				</section>
+<!--
+>>>>>>> origin/gh-pages
 				<section>
 					<h2>Heads Up</h2>
 					<p>
@@ -55,8 +76,14 @@
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 					</aside>
 				</section>
+<<<<<<< HEAD
 
 				<!-- Example of nested vertical slides -->
+=======
+				-->
+
+				<!-- Example of nested vertical slides 
+>>>>>>> origin/gh-pages
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
@@ -88,6 +115,7 @@
 					</section>
 				</section>
 
+<<<<<<< HEAD
 				<section>
 					<h2>Slides</h2>
 					<p>
@@ -342,11 +370,15 @@ function linkify( selector ) {
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
 				</section>
+=======
+				-->
+>>>>>>> origin/gh-pages
 
 			</div>
 
 		</div>
 
+<<<<<<< HEAD
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 
@@ -372,6 +404,161 @@ function linkify( selector ) {
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+=======
+
+<div id="jp_container_1" class="jp-audio" style="position:absolute;top:-300px;visibility:hidden;">
+    <div class="jp-type-single">
+        <div class="jp-gui jp-interface">
+            <ul class="jp-controls">
+                
+                <!-- comment out any of the following <li>s to remove these buttons -->
+                
+                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            
+            <!-- you can comment out any of the following <div>s too -->
+            
+            <div class="jp-progress">
+                <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                </div>
+            </div>
+            <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+            </div>
+            <div class="jp-current-time"></div>
+            <div class="jp-duration"></div>                   
+        </div>
+        <div class="jp-title">
+            <ul>
+                <li>Cro Magnon Man</li>
+            </ul>
+        </div>
+        <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+    </div>
+</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="http://jplayer.org/latest/js/jquery.jplayer.min.js"></script>
+
+		<script>
+
+			var $jp;
+			function playmp3(url){
+			    if($jp == null)
+			    {
+			        $jp = $("#jquery_jplayer_1");
+			        $jp.jPlayer({
+			            ready: function(event) {
+			                $(this).jPlayer("setMedia", {
+			                    mp3: url
+			                });
+			            },
+			            swfPath: "http://jplayer.org/latest/js",
+			            supplied: "mp3"
+			        });
+			        $jp.bind($.jPlayer.event.loadeddata,function(){
+			            $jp.jPlayer("play");
+			        });
+			    } else {
+			        $jp.jPlayer("setMedia",{mp3:url});
+			    }
+			}
+			function getMp3Url(text)
+			{
+				text = encodeURIComponent(text);
+				var ret= 'http://api.voicerss.org/?key=f35b80edd9ba4191b7bb28cea525a7cd&hl=pt-br&src='+text;
+				console.log(ret);
+				return ret;
+			}
+
+
+			window.globalNews = [];
+			$(document).ready(function(){
+				
+
+
+			 	parseXml = function(xml){
+
+		 			$(xml).find('item').each(function(i,k)
+		 			{
+		 				var $this = $(this);
+						var title = $this.find('title').text();
+						var description = $this.find('description').text();
+
+						window.globalNews.push({title:title,description:description});
+
+		 				$('.slides').append('<section><h2>'+title+'</h2><p>'+description+'</p><aside class="notes"></aside></section>');	 					
+
+		 			});
+		 			$('.slides').find('img').each(function(){ 
+	 					var src = $(this).attr('src');
+	 					if (src.indexOf('s.glbimg.com')>-1)
+	 					{
+	 						src = 'http://s.glbimg.com' +  src.split('s.glbimg.com')[1];
+	 						$(this).attr('src',src);
+	 					}
+		 			});
+	 				initReveal();
+			 	};
+
+
+				 $.ajax({
+				    type: "GET",
+				    url: 'rss2.xml',//"http://g1.globo.com/dynamo/rss2.xml",
+				    dataType: "xml",
+				    success: parseXml
+				  });
+
+/*
+				$.get('',function(data){
+					var obj = 
+				});
+*/
+
+				function initReveal()
+				{
+					Reveal.initialize({
+						controls: true,
+						progress: true,
+						history: true,
+						center: true,
+
+						theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+						transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+						// Optional libraries used to extend on reveal.js
+						dependencies: [
+							{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+							{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+							{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+							{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+							{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+							{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+						]
+					});
+
+					Reveal.addEventListener( 'slidechanged', function( event ) {
+					    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+					    if(event.indexh>0)
+					    {
+					    	var noticia = window.globalNews[event.indexh-1];
+					    	var descr = noticia.description.replace(/<\/?[^>]+(>|$)/g, "");
+				    		playmp3(getMp3Url(noticia.title + " . " + descr));
+						}
+					});
+				}			
+>>>>>>> origin/gh-pages
 			});
 
 		</script>
