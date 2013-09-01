@@ -239,8 +239,8 @@ window.globalNews = [];
 					    if(event.indexh>0)
 					    {
 					    	var noticia = window.globalNews[event.indexh-1];
-					    	var descr = cleanText = noticia.description.replace(/<\/?[^>]+(>|$)/g, "");
-				    		playmp3(getMp3Url(noticia.title + " . " descr));
+					    	var descr = noticia.description.replace(/<\/?[^>]+(>|$)/g, "");
+				    		playmp3(getMp3Url(noticia.title + " . " + descr));
 						}
 					});
 				}			
