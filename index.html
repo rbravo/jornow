@@ -116,9 +116,9 @@
 		 				$('.slides').append('<section><h2>'+title+'</h2><p>'+description+'</p><aside class="notes"></aside></section>');	 					
 
 		 			});
-		 			$('slides').find('img').each(function(){ 
+		 			$('.slides').find('img').each(function(){ 
 	 					var src = $(this).attr('src');
-	 					$(this).attr('src','http://' + src.split('90x68/s')[1]);
+	 					$(this).attr('src','http://' + src.split('90x68/')[1]);
 		 			});
 	 				initReveal();
 			 	};
